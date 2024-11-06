@@ -100,7 +100,8 @@ export class AppComponent implements OnInit {
     this.currency = this.currencyArray[++this.index % this.currencyArray.length].currency;
     this.coefficient = this.currencyArray[this.index % this.currencyArray.length].coefficient;
     this.itemsProd.forEach((item) => {
-      item.price = +(item.basePrice * this.coefficient).toFixed(1);
+      console.log(`базовая цена ${item.baseprice}`);
+      item.price = +(item.baseprice * this.coefficient).toFixed(1);
       if (this.currentOrder.hasOwnProperty(item.title)) {
         this.currentOrder[item.title].price = +(item.price * this.currentOrder[item.title].count).toFixed(1);
       }
